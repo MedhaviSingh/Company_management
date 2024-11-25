@@ -1,52 +1,81 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import axios from "axios";
 import UsersTable from "./UsersTable";
 import TasksTable from "./TasksTable";
+import UserModal from "./UserModal";
+import TaskModal from "./TaskModal";
 
 const AdminPanel = () => {
   const [users, setUsers] = useState([]);
   const [tasks, setTasks] = useState([]);
+  const [showUserModal, setShowUserModal] = useState(false);
+  const [showTaskModal, setShowTaskModal] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [currentTask, setCurrentTask] = useState(null);
 
   // Fetch users and tasks from the mock API
   useEffect(() => {
-    // Fetch users
-    axios
-      .get("http://localhost:5000/users")
-      .then((response) => {
-        setUsers(response.data);
-      })
-      .catch((error) => console.error("Error fetching users:", error));
-
-    // Fetch tasks
-    axios
-      .get("http://localhost:5000/tasks")
-      .then((response) => {
-        setTasks(response.data);
-      })
-      .catch((error) => console.error("Error fetching tasks:", error));
+    fetchUsers();
+    fetchTasks();
   }, []);
 
-  // Handlers for user actions
-  const handleEditUser = (userId) => {
-    console.log("Edit user:", userId);
-    // Add your logic to edit a user
+  const fetchUsers = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/users");
+      setUsers(response.data);
+    } catch (error) {
+      console.error("Error fetching users:", error);
+    }
   };
 
-  const handleDeleteUser = (userId) => {
-    console.log("Delete user:", userId);
-    // Add your logic to delete a user
+  const fetchTasks = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/tasks");
+      setTasks(response.data);
+    } catch (error) {
+      console.error("Error fetching tasks:", error);
+    }
   };
 
-  // Handlers for task actions
-  const handleEditTask = (taskId) => {
-    console.log("Edit task:", taskId);
-    // Add your logic to edit a task
+  // User Handlers
+  const handleAddUser = () => {
+    setCurrentUser(null);
+    setShowUserModal(true);
   };
 
-  const handleDeleteTask = (taskId) => {
-    console.log("Delete task:", taskId);
-    // Add your logic to delete a task
+  const handleEditUser = (user) => {
+    setCurrentUser(user);
+    setShowUserModal(true);
+  };
+
+  const handleDeleteUser = async (userId) => {
+    try {
+      await axios.delete(`http://localhost:5000/users/${userId}`);
+      fetchUsers();
+    } catch (error) {
+      console.error("Error deleting user:", error);
+    }
+  };
+
+  // Task Handlers
+  const handleAddTask = () => {
+    setCurrentTask(null);
+    setShowTaskModal(true);
+  };
+
+  const handleEditTask = (task) => {
+    setCurrentTask(task);
+    setShowTaskModal(true);
+  };
+
+  const handleDeleteTask = async (taskId) => {
+    try {
+      await axios.delete(`http://localhost:5000/tasks/${taskId}`);
+      fetchTasks();
+    } catch (error) {
+      console.error("Error deleting task:", error);
+    }
   };
 
   return (
@@ -59,8 +88,11 @@ const AdminPanel = () => {
       </Row>
 
       {/* User Management Section */}
-      <Row className="mb-5">
+      <Row className="mb-4">
         <Col>
+          <Button onClick={handleAddUser} className="mb-3">
+            Add User
+          </Button>
           <UsersTable
             users={users}
             onEdit={handleEditUser}
@@ -72,6 +104,9 @@ const AdminPanel = () => {
       {/* Task Management Section */}
       <Row>
         <Col>
+          <Button onClick={handleAddTask} className="mb-3">
+            Add Task
+          </Button>
           <TasksTable
             tasks={tasks}
             onEdit={handleEditTask}
@@ -79,6 +114,20 @@ const AdminPanel = () => {
           />
         </Col>
       </Row>
+
+      {/* Modals */}
+      <UserModal
+        show={showUserModal}
+        onHide={() => setShowUserModal(false)}
+        onSave={fetchUsers}
+        currentUser={currentUser}
+      />
+      <TaskModal
+        show={showTaskModal}
+        onHide={() => setShowTaskModal(false)}
+        onSave={fetchTasks}
+        currentTask={currentTask}
+      />
     </Container>
   );
 };

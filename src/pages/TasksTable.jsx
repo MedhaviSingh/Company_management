@@ -25,7 +25,7 @@ const TasksTable = ({ tasks, onEdit, onDelete }) => {
                   variant="warning"
                   size="sm"
                   className="me-2"
-                  onClick={() => onEdit(task.id)}
+                  onClick={() => onEdit(task)}
                 >
                   Edit
                 </Button>

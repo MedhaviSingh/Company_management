@@ -18,7 +18,7 @@ const UsersTable = ({ users, onEdit, onDelete }) => {
         <tbody>
           {users.map((user) => (
             <tr key={user.id}>
-              <td>{user.firstname}</td>
+              <td>{`${user.firstname} ${user.lastname}`}</td>
               <td>{user.email}</td>
               <td>{user.role}</td>
               <td>{user.status}</td>
@@ -27,7 +27,7 @@ const UsersTable = ({ users, onEdit, onDelete }) => {
                   variant="warning"
                   size="sm"
                   className="me-2"
-                  onClick={() => onEdit(user.id)}
+                  onClick={() => onEdit(user)}
                 >
                   Edit
                 </Button>
