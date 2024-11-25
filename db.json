@@ -1,0 +1,75 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "firstname": "admin1",
+        "lastname": "Crafters",
+        "email": "webcrafters@gmail.com",
+        "password": "admin123",
+        "role": "admin",
+        "status": "active",
+        "mobile": "9876543210",
+        "token": "sample_admin_token"
+      },
+      {
+        "id": 2,
+        "firstname": "Lucky",
+        "lastname": "Rawat",
+        "email": "lucky@gmail.com",
+        "password": "user123",
+        "role": "manager",
+        "status": "active",
+        "mobile": "9876543211",
+        "token": "sample_user_token"
+      },
+      {
+        "id": 3,
+        "firstname": "bob",
+        "lastname": "Rawat",
+        "email": "bob@gmail.com",
+        "password": "user123",
+        "role": "employee",
+        "status": "inactive",
+        "mobile": "9876543211",
+        "token": "sample_user_token"
+      },
+      {
+        "id": 4,
+        "firstname": "alice",
+        "lastname": "Rawat",
+        "email": "alice@gmail.com",
+        "password": "user123",
+        "role": "employee",
+        "status": "inactive",
+        "mobile": "9876543211",
+        "token": "sample_user_token"
+      }
+    ],
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Design Login Page",
+        "description": "Design and implement the login page UI.",
+        "status": "pending",
+        "assignedTo": "Lucky Rawat",
+        "dueDate": "2024-12-01"
+      },
+      {
+        "id": 2,
+        "title": "Setup Admin Panel",
+        "description": "Create the admin panel for user and task management.",
+        "status": "completed",
+        "assignedTo": "admin1 Crafters",
+        "dueDate": "2024-11-15"
+      },
+      {
+        "id": 3,
+        "title": "Bug Fixes",
+        "description": "Fix bugs reported by QA team.",
+        "status": "in progress",
+        "assignedTo": "Lucky Rawat",
+        "dueDate": "2024-12-05"
+      }
+    ]
+  }
+  
