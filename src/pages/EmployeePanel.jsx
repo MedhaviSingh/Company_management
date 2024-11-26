@@ -16,7 +16,7 @@ const EmployeePanel = () => {
         .then((response) => {
           // Filter tasks based on the logged-in employee's ID
           const employeeTasks = response.data.filter(
-            (task) => task.assignedTo === userInfo.id
+            (task) => task.assignedToId === userInfo.id
           );
           setTasks(employeeTasks);
         })
@@ -42,7 +42,7 @@ const EmployeePanel = () => {
     <Container className="mt-4">
       <Row className="mb-4">
         <Col>
-          <h2>Welcome, {userInfo?.name || "Employee"}!</h2>
+          <h2>Welcome, {userInfo?.firstname || "Employee"}!</h2>
           <p>Here are the tasks assigned to you.</p>
         </Col>
       </Row>
