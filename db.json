@@ -2,8 +2,8 @@
   "users": [
     {
       "firstname": "admin1",
-      "lastname": "Crafters",
-      "email": "admincrafters@gmail.com",
+      "lastname": "pegasus",
+      "email": "adminpegasus@gmail.com",
       "role": "admin",
       "status": "active",
       "password": "admin123",
@@ -25,7 +25,7 @@
       "lastname": "scoff",
       "email": "alice@gmail.com",
       "role": "employee",
-      "status": "inactive",
+      "status": "active",
       "password": "employee123",
       "id": "4"
     },
@@ -41,12 +41,57 @@
   ],
   "tasks": [
     {
+      "id": "1",
+      "title": "Bug Fixes",
+      "description": "Fix bugs reported by QA team.",
+      "status": "Completed",
+      "assignedTo": "Alice Scoff",
+      "assignedToId": "4",
+      "dueDate": "2024-12-05"
+    },
+    {
+      "id": "2",
+      "title": "Bug Fixes",
+      "description": "Fix bugs reported by QA team.",
+      "status": "Completed",
+      "assignedTo": "Alice Scoff",
+      "assignedToId": "4",
+      "dueDate": "2024-12-05"
+    },
+    {
       "id": "3",
       "title": "Bug Fixes",
       "description": "Fix bugs reported by QA team.",
-      "status": "in progress",
-      "assignedTo": "Lucky Rawat",
-      "assignedToId": 2,
+      "status": "Completed",
+      "assignedTo": "Alice Scoff",
+      "assignedToId": "4",
+      "dueDate": "2024-12-05"
+    },
+    {
+      "id": "4",
+      "title": "Bug Fixes",
+      "description": "Fix bugs reported by QA team.",
+      "status": "Completed",
+      "assignedTo": "Alice Scoff",
+      "assignedToId": "4",
+      "dueDate": "2024-12-05"
+    },
+    {
+      "id": "5",
+      "title": "Bug Fixes",
+      "description": "Fix bugs reported by QA team.",
+      "status": "Completed",
+      "assignedTo": "Alice Scoff",
+      "assignedToId": "4",
+      "dueDate": "2024-12-05"
+    },
+    {
+      "id": "6",
+      "title": "Bug Fixes",
+      "description": "Fix bugs reported by QA team.",
+      "status": "Completed",
+      "assignedTo": "Alice Scoff",
+      "assignedToId": "4",
       "dueDate": "2024-12-05"
     }
   ],

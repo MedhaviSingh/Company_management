@@ -1,0 +1,20 @@
+.users-section {
+    background-color: blueviolet;
+    padding: 2rem;
+   
+}
+.card-body{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.texter{
+    font-size: 36px;
+    font-weight: 400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+}
+
+.lablr{
+    font-style: italic;
+    font-weight: 600;
+    font-size: 18px;
+}

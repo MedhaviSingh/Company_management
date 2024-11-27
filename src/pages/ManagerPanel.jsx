@@ -4,14 +4,13 @@ import axios from "axios";
 import UsersTable from "./UsersTable";
 import TasksTable from "./TasksTable";
 import TaskModal from "./TaskModal";
-
+import "./Admin.css";
 const ManagersPanel = () => {
   const [users, setUsers] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [showTaskModal, setShowTaskModal] = useState(false);
   const [currentTask, setCurrentTask] = useState(null);
 
-  // Fetch users and tasks from the mock API
   useEffect(() => {
     fetchUsers();
     fetchTasks();
@@ -74,8 +73,8 @@ const ManagersPanel = () => {
     <Container className="mt-4">
       <Row className="mb-4">
         <Col>
-          <h2>Welcome, Manager!</h2>
-          <p>Here’s an overview of the users and tasks assigned to the team.</p>
+          <h2 class="text">Welcome, Manager!</h2>
+          <p class="para">Here’s an overview of the users and tasks assigned to the team.</p>
         </Col>
       </Row>
       <Row className="mb-5">
