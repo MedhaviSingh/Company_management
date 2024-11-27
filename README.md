@@ -87,10 +87,14 @@ This will start the application at http://localhost:3000.
 ![image](https://github.com/user-attachments/assets/05cd39a1-504d-4078-a886-af14725c1d21)
 
 ### Key Highlights
-*Role-Based UI*: Dynamically adjusts based on the logged-in user's role.
-*Task Delegation*: Assign tasks with deadlines and statuses to specific users.
-*Permissions*: Granular access control ensures security and role-specific functionality.
-*Enhanced Security with Encrypted Cookies*: This project incorporates secure storage and management of sensitive user data using AES encryption for cookies. This ensures that user details, such as authentication tokens, are encrypted before being stored and decrypted when accessed, providing an additional layer of security.
+
+***Role-Based UI***: Dynamically adjusts based on the logged-in user's role.
+
+***Task Delegation***: Assign tasks with deadlines and statuses to specific users.
+
+***Permissions***: Granular access control ensures security and role-specific functionality.
+
+***Enhanced Security with Encrypted Cookies***: This project incorporates secure storage and management of sensitive user data using AES encryption for cookies. This ensures that user details, such as authentication tokens, are encrypted before being stored and decrypted when accessed, providing an additional layer of security.
 
 ### Future Enhancements
 - Implement a database instead of a mock JSON server.
