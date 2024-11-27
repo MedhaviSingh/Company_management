@@ -42,7 +42,8 @@ Employee can:
 - JSON Server for mocking the backend.
   
 2. Clone the Repository
-``` git clone <repository_url>
+```
+    git clone <repository_url>
     cd <project_directory>
 ```
 3. Install Dependencies
@@ -74,8 +75,12 @@ This will start the application at http://localhost:3000.
 ![Screenshot 2024-11-27 212149](https://github.com/user-attachments/assets/6c7b1f98-256e-40f4-9203-e2b0f82ed389)
 ### Key Highlights
 ***Role-Based UI***: Dynamically adjusts based on the logged-in user's role.
+
 ***Task Delegation***: Assign tasks with deadlines and statuses to specific users.
+
 ***Permissions***: Granular access control ensures security and role-specific functionality.
+
 ***Enhanced Security with Encrypted Cookies***: This project incorporates secure storage and management of sensitive user data using AES encryption for cookies. This ensures that user details, such as authentication tokens, are encrypted before being stored and decrypted when accessed, providing an additional layer of security.
+
 ### Future Enhancements
 - Implement a database instead of a mock JSON server.
