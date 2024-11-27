@@ -3,30 +3,30 @@
     {
       "firstname": "admin1",
       "lastname": "Crafters",
-      "email": "webcrafters@gmail.com",
+      "email": "admincrafters@gmail.com",
       "role": "admin",
       "status": "active",
-      "password": "",
+      "password": "admin123",
       "id": "1"
     },
     {
       "id": "2",
-      "firstname": "Lucky",
-      "lastname": "Rawat",
-      "email": "lucky@gmail.com",
-      "password": "user123",
+      "firstname": "manager",
+      "lastname": "singh",
+      "email": "manager@gmail.com",
+      "password": "manager123",
       "role": "manager",
       "status": "active",
       "mobile": "9876543211",
       "token": "sample_user_token"
     },
     {
-      "firstname": "aliceff",
-      "lastname": "Rawat",
+      "firstname": "alice",
+      "lastname": "scoff",
       "email": "alice@gmail.com",
       "role": "employee",
       "status": "inactive",
-      "password": "",
+      "password": "employee123",
       "id": "4"
     },
     {
@@ -35,7 +35,7 @@
       "email": "medhavisingh.vm@gmail.com",
       "role": "admin",
       "status": "inactive",
-      "password": "",
+      "password": "admin123",
       "id": "d598"
     }
   ],
@@ -49,5 +49,27 @@
       "assignedToId": 2,
       "dueDate": "2024-12-05"
     }
-  ]
+  ],
+  "permissions": {
+    "admin": [
+      "view_users",
+      "edit_users",
+      "delete_users",
+      "add_users",
+      "view_tasks",
+      "edit_tasks",
+      "delete_tasks",
+      "add_tasks"
+    ],
+    "manager": [
+      "view_users",
+      "view_tasks",
+      "edit_tasks",
+      "add_tasks"
+    ],
+    "employee": [
+      "view_tasks",
+      "edit_tasks"
+    ]
+  }
 }

@@ -17,10 +17,10 @@ const UserModal = ({ show, onHide, onSave, currentUser }) => {
       setFormData({
         firstname: currentUser.firstname,
         lastname: currentUser.lastname,
-        email: currentUser.email, // Email is not editable
+        email: currentUser.email, 
         role: currentUser.role,
         status: currentUser.status,
-        password: "", // Reset password in edit mode
+        password: "", 
       });
     } else {
       setFormData({
@@ -42,16 +42,14 @@ const UserModal = ({ show, onHide, onSave, currentUser }) => {
   const handleSubmit = async () => {
     try {
       if (currentUser) {
-        // Update user
         await axios.put(`http://localhost:5000/users/${currentUser.id}`, {
           ...formData,
         });
       } else {
-        // Add new user
         await axios.post("http://localhost:5000/users", formData);
       }
-      onSave(); // Refresh the users list
-      onHide(); // Close modal
+      onSave(); 
+      onHide(); 
     } catch (error) {
       console.error("Error saving user:", error);
     }

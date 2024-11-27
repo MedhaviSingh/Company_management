@@ -35,7 +35,6 @@ const ManagersPanel = () => {
     }
   };
 
-  // Handlers for user actions (restricted for the manager)
   const handleEditUser = () => {
     alert("Managers can only view user details.");
   };
@@ -44,17 +43,16 @@ const ManagersPanel = () => {
     alert("Managers cannot delete users.");
   };
 
-  // Handlers for task actions
   const handleEditTask = (taskId) => {
     const taskToEdit = tasks.find((task) => task.id === taskId);
-    setCurrentTask(taskId); // Pass the task to the modal for editing
-    setShowTaskModal(true); // Open the modal
+    setCurrentTask(taskId); 
+    setShowTaskModal(true); 
   };
 
   const handleDeleteTask = async (taskId) => {
     try {
       await axios.delete(`http://localhost:5000/tasks/${taskId}`);
-      fetchTasks(); // Refresh the task list after deletion
+      fetchTasks(); 
       alert("Task deleted successfully.");
     } catch (error) {
       console.error("Error deleting task:", error);
@@ -63,13 +61,13 @@ const ManagersPanel = () => {
   };
 
   const handleAddTask = () => {
-    setCurrentTask(null); // Clear currentTask to add a new task
+    setCurrentTask(null); 
     setShowTaskModal(true);
   };
 
   const handleSaveTask = async () => {
-    fetchTasks(); // Refresh the task list after adding or editing a task
-    setShowTaskModal(false); // Close the modal
+    fetchTasks(); 
+    setShowTaskModal(false); 
   };
 
   return (
@@ -80,7 +78,6 @@ const ManagersPanel = () => {
           <p>Here’s an overview of the users and tasks assigned to the team.</p>
         </Col>
       </Row>
-      {/* User Management Section */}
       <Row className="mb-5">
         <Col>
           <UsersTable
@@ -91,7 +88,6 @@ const ManagersPanel = () => {
         </Col>
       </Row>
 
-      {/* Task Management Section */}
       <Row>
         <Col>
             <Button variant="primary" onClick={handleAddTask} className="mb-3">
@@ -105,13 +101,12 @@ const ManagersPanel = () => {
         </Col>
       </Row>
 
-      {/* Task Modal for Adding/Editing Tasks */}
       {showTaskModal && (
         <TaskModal
           show={showTaskModal}
           onHide={() => setShowTaskModal(false)}
           onSave={handleSaveTask}
-          currentTask={currentTask} // Pass the task to edit or null for adding
+          currentTask={currentTask} 
         />
       )}
     </Container>

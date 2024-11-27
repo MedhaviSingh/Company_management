@@ -5,7 +5,7 @@ import UsersTable from "./UsersTable";
 import TasksTable from "./TasksTable";
 import UserModal from "./UserModal";
 import TaskModal from "./TaskModal";
-
+import "./Admin.css";
 const AdminPanel = () => {
   const [users, setUsers] = useState([]);
   const [tasks, setTasks] = useState([]);
@@ -14,7 +14,6 @@ const AdminPanel = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [currentTask, setCurrentTask] = useState(null);
 
-  // Fetch users and tasks from the mock API
   useEffect(() => {
     fetchUsers();
     fetchTasks();
@@ -38,7 +37,6 @@ const AdminPanel = () => {
     }
   };
 
-  // User Handlers
   const handleAddUser = () => {
     setCurrentUser(null);
     setShowUserModal(true);
@@ -58,7 +56,6 @@ const AdminPanel = () => {
     }
   };
 
-  // Task Handlers
   const handleAddTask = () => {
     setCurrentTask(null);
     setShowTaskModal(true);
@@ -82,12 +79,10 @@ const AdminPanel = () => {
     <Container className="mt-4">
       <Row className="mb-4">
         <Col>
-          <h2>Welcome, Admin!</h2>
-          <p>Manage your users and tasks efficiently.</p>
+          <h2 class="text">Welcome, Admin!</h2>
+          <p class="para">Manage your users and tasks efficiently.</p>
         </Col>
       </Row>
-
-      {/* User Management Section */}
       <Row className="mb-4">
         <Col>
           <Button onClick={handleAddUser} className="mb-3">
@@ -100,8 +95,6 @@ const AdminPanel = () => {
           />
         </Col>
       </Row>
-
-      {/* Task Management Section */}
       <Row>
         <Col>
           <Button onClick={handleAddTask} className="mb-3">
@@ -114,8 +107,6 @@ const AdminPanel = () => {
           />
         </Col>
       </Row>
-
-      {/* Modals */}
       <UserModal
         show={showUserModal}
         onHide={() => setShowUserModal(false)}

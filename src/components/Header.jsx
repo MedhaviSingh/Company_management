@@ -12,47 +12,36 @@ function Header() {
   const navigate = useNavigate();
   const { userInfo, setUserInfo } = useUser();
   const [menu, setMenu] = useState([]);
-
-  // Fetch and update menu based on the user role
   useEffect(() => {
     if (userInfo) {
-      setMenu(getMenu(userInfo.role)); // Update menu when user info changes
+      setMenu(getMenu(userInfo.role)); 
     } else {
-      setMenu([]); // Clear menu when user is not logged in
+      setMenu([]); 
     }
   }, [userInfo]);
 
   const logout = () => {
-    deleteCookie('_USER_AUTH_'); // Clear the auth cookie
-    setUserInfo(null); // Clear user info from context
-    navigate('/'); // Redirect to home
-    setMenu([]); // Clear menu
+    deleteCookie('_USER_AUTH_'); 
+    setUserInfo(null); 
+    navigate('/'); 
+    setMenu([]); 
   };
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">Marco</Navbar.Brand>
+        <Navbar.Brand href="#home"></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            {/* Render dynamic menu items based on user role */}
             {menu.map((item, index) => (
               <NavLink key={index} className="ms-2 nav-link" to={item.path}>
                 {item.displayName}
               </NavLink>
             ))}
-
-            {/* Conditionally render Logout button or Login button */}
-            {userInfo ? (
+            {userInfo && (
               <Button variant="danger" onClick={logout}>
                 Logout
-              </Button>
-            ) : (
-              <Button variant="primary">
-                <NavLink to="/login" className="text-white">
-                  Login
-                </NavLink>
               </Button>
             )}
           </Nav>

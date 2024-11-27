@@ -1,10 +1,11 @@
 import React from "react";
 import { Table, Button } from "react-bootstrap";
+import "./TasksTable.css"
 
 const TasksTable = ({ tasks, onEdit, onDelete }) => {
   return (
-    <div>
-      <h3>Tasks</h3>
+    <div className="tabler">
+      <h3 className="heading">Tasks</h3>
       <Table striped bordered hover responsive>
         <thead>
           <tr>

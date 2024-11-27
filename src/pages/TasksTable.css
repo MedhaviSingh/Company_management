@@ -1,0 +1,16 @@
+.heading{
+    font-weight: 200;
+    font-size: 46px;
+    padding-left: 10px;
+    color: antiquewhite;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.tabler{
+    background-color: rgb(80, 80, 227);
+    border-radius: 10px;
+    border-style: solid;
+    padding: 5px;
+    border-width: 2px;
+    border-color: bisque;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); 
+}

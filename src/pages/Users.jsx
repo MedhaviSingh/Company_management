@@ -4,11 +4,10 @@ import axios from "axios";
 import { useUser } from "../contexts/UserContext";
 
 const Users = () => {
-  const { userInfo, setUserInfo } = useUser(); // Access logged-in user info
-  const [isEditing, setIsEditing] = useState(false); // Toggle edit mode
-  const [updatedInfo, setUpdatedInfo] = useState(userInfo); // Form data
+  const { userInfo, setUserInfo } = useUser(); 
+  const [isEditing, setIsEditing] = useState(false); 
+  const [updatedInfo, setUpdatedInfo] = useState(userInfo); 
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUpdatedInfo((prev) => ({
@@ -17,14 +16,13 @@ const Users = () => {
     }));
   };
 
-  // Handle form submission to update user info
   const handleUpdate = (e) => {
     e.preventDefault();
     axios
       .put(`http://localhost:5000/users/${userInfo.id}`, updatedInfo)
       .then((res) => {
-        setUserInfo(res.data); // Update context with new user data
-        setIsEditing(false); // Exit edit mode
+        setUserInfo(res.data); 
+        setIsEditing(false); 
       })
       .catch((err) => console.error("Error updating user info:", err));
   };
@@ -38,7 +36,6 @@ const Users = () => {
               <Card.Body>
                 <h3 className="text-center mb-4">Your Profile</h3>
                 <Form onSubmit={handleUpdate}>
-                  {/* Name Field */}
                   <Form.Group className="mb-3">
                     <Form.Label>Name</Form.Label>
                     <Form.Control
@@ -51,8 +48,6 @@ const Users = () => {
                       required
                     />
                   </Form.Group>
-
-                  {/* Email Field (read-only) */}
                   <Form.Group className="mb-3">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
@@ -63,8 +58,6 @@ const Users = () => {
                       placeholder="Email cannot be changed"
                     />
                   </Form.Group>
-
-                  {/* Role Field */}
                   <Form.Group className="mb-3">
                     <Form.Label>Role</Form.Label>
                     <Form.Control
@@ -77,8 +70,6 @@ const Users = () => {
                       required
                     />
                   </Form.Group>
-
-                  {/* Buttons */}
                   {isEditing ? (
                     <div className="d-flex justify-content-between">
                       <Button
@@ -93,8 +84,8 @@ const Users = () => {
                         variant="secondary"
                         className="w-45"
                         onClick={() => {
-                          setUpdatedInfo(userInfo); // Revert changes
-                          setIsEditing(false); // Exit edit mode
+                          setUpdatedInfo(userInfo); 
+                          setIsEditing(false); 
                         }}
                       >
                         Cancel

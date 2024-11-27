@@ -15,13 +15,9 @@ function App() {
   return (
     <>
       <UserProvider>
-        {/* Wrap the application in the UserProvider to provide user context */}
         <Header />
         <Routes>
-          {/* Public route for login */}
           <Route path="/" element={<Login />} />
-
-          {/* Private route for the dashboard, accessible to all roles */}
           <Route
             path="dashboard"
             element={
@@ -30,8 +26,6 @@ function App() {
               </PrivateRoute>
             }
           />
-
-          {/* Private route for admin panel, accessible to admin role only */}
           <Route
             path="admin"
             element={
@@ -40,8 +34,6 @@ function App() {
               </PrivateRoute>
             }
           />
-
-          {/* Private route for manager panel, accessible to manager role only */}
           <Route
             path="manager"
             element={
@@ -50,8 +42,6 @@ function App() {
               </PrivateRoute>
             }
           />
-
-          {/* Private route for employee panel, accessible to employee role only */}
           <Route
             path="employee"
             element={
@@ -60,8 +50,6 @@ function App() {
               </PrivateRoute>
             }
           />
-
-          {/* Private route for users, accessible to admin role only */}
           <Route
             path="users"
             element={

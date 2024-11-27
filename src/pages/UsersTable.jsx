@@ -1,11 +1,11 @@
 import React from "react";
 import { Table, Button } from "react-bootstrap";
-
+import "./UsersTable.css"
 const UsersTable = ({ users, onEdit, onDelete }) => {
   return (
-    <div>
-      <h3>Users</h3>
-      <Table striped bordered hover responsive>
+    <div className="tabler">
+      <h3 className="heading">Users</h3>
+      <Table striped bordered hover responsive className="tabler">
         <thead>
           <tr>
             <th>Name</th>

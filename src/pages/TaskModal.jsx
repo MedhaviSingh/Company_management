@@ -33,16 +33,14 @@ const TaskModal = ({ show, onHide, onSave, currentTask }) => {
   const handleSubmit = async () => {
     try {
       if (currentTask) {
-        // Update task
         await axios.put(`http://localhost:5000/tasks/${currentTask.id}`, {
           ...formData,
         });
       } else {
-        // Add new task
         await axios.post("http://localhost:5000/tasks", formData);
       }
-      onSave(); // Refresh the tasks list
-      onHide(); // Close modal
+      onSave(); 
+      onHide(); 
     } catch (error) {
       console.error("Error saving task:", error);
     }

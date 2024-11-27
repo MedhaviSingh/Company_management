@@ -1,0 +1,102 @@
+.login-section {
+    
+    background-color: lightskyblue; 
+    align-items: center;
+    justify-content: center;
+   
+  }
+  .Form{
+    position: relative;
+    width: 500px;
+    
+    padding: 10px;
+    
+    background-color: #ffffff;
+    margin-left: 5px;
+
+  }
+  .login-box {
+    position: relative;
+    margin-left: 300px;
+    display: flex;
+    align-items: center;
+   padding: 0;
+   
+    width: 700px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid #1b31db; 
+    border-radius: 30px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+.custom{
+    border-radius: 5px;
+    border-color: #0056b3;
+    border-width: 10px;
+    padding: 10px;
+    
+  }
+  .imgdiv{
+    position: relative;
+    display: inline-block;
+    margin-left: 30px;
+   align-items: center;
+   background-color: #0056b3;
+    padding: 0;
+
+  }
+  .img{
+    
+    width: 290px;
+    height: auto;
+    
+  }
+.h2{
+    position: absolute;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: rgb(255, 255, 255); 
+    font-size: 48px; 
+    font-weight: 600; 
+    text-align: center;
+}
+.labeltext{
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+.button{
+    position: relative;
+    
+}
+  
+.h3 {
+    color: #010101; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    text-align: left; 
+  }
+  
+  .form-control {
+    border: 1px solid #007bff; 
+  }
+  
+  .form-control:focus {
+    border-color: #0056b3; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+  }
+  
+  .btn-primary {
+    background-color: #173999; 
+    border: none; 
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; 
+  }
+  
+  .text-danger {
+    font-weight: bold; 
+  }

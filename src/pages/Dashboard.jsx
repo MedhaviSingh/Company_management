@@ -6,10 +6,9 @@ import EmployeePanel from "./EmployeePanel";
 
 const Dashboard = () => {
   const {userInfo} = useUser()
-  // Determine which panel to render based on the user's role
   const renderPanel = () => {
     if (!userInfo) {
-      return <p>Loading user data...</p>; // Handle cases where user data isn't loaded yet
+      return <p>Loading user data...</p>; 
     }
 
     switch (userInfo.role) {
