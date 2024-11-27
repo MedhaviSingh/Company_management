@@ -46,16 +46,18 @@ Employee can:
 - JSON Server for mocking the backend.
   
 2. Clone the Repository
-- git clone 
-- cd <project_directory>
+```
+   git clone <repository_url>
+   cd <project_directory>
+```
 
 3. Install Dependencies
-- npm install
+   ``` npm install ```
 
-4. Start the JSON Server
+5. Start the JSON Server
 - Create a db.json file in the root directory with the following structure:
 - Start the JSON Server: 
-npx json-server --watch db.json --port 5000
+``` npx json-server --watch db.json --port 5000 ``` 
 
 5. Start the React Application
 npm start
