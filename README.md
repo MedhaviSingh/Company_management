@@ -84,7 +84,8 @@ This will start the application at http://localhost:3000.
 #### Employee Actions:
 - View tasks assigned to you.
 - Update the task status (e.g., Pending, Completed).
-![image](https://github.com/user-attachments/assets/05cd39a1-504d-4078-a886-af14725c1d21)
+![image](https://github.com/user-attachments/assets/766b6b88-5cb1-45c9-aa82-b58fe96b480b)
+
 
 ### Key Highlights
 
